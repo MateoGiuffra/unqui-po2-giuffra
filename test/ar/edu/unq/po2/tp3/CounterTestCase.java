@@ -35,7 +35,7 @@ counter.addNumber(4);
 * Verifica la cantidad de pares
 */
 @Test
-public void testOddNumbers() {
+public void testNumerosPares() {
 // Getting the even occurrences
 int amount = counter.cantPares();
 // I check the amount is the expected one
