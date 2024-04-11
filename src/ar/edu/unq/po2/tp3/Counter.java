@@ -5,6 +5,8 @@ import java.util.List;
 
 public class Counter {
 
+	
+	
 	private List<Integer> counter = new ArrayList<Integer>();
 
 	public void addNumber(Integer num) {

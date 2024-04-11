@@ -15,6 +15,7 @@ private Counter counter;
 * @throws Exception
 */
 
+
 @BeforeEach
 public void setUp() throws Exception {
 //Se crea el contador
