@@ -5,8 +5,6 @@ import java.util.List;
 
 public class Counter {
 
-	
-	
 	private List<Integer> counter = new ArrayList<Integer>();
 
 	public void addNumber(Integer num) {
@@ -17,13 +15,13 @@ public class Counter {
 
 		Integer contador = 0;
 		for (int i = 0; i < counter.size(); i++) {
-			if (counter.get(i) % 2 == 0)
+			if (esPar(counter.get(i)))
 				contador++;
 		}
 		return contador;
 	}
 
-	public Integer cantInpares() {
+	public Integer cantImpares() {
 
 		Integer contador = 0;
 		for (int i = 0; i < counter.size(); i++) {
@@ -43,7 +41,49 @@ public class Counter {
 
 		return contador;
 	}
-
-
-
+	
+	public Integer numConMasPares(List<Integer> listaNumerica) {
+		Integer nroFinal = 0;
+		for (Integer nro : listaNumerica ) {
+			nroFinal = numeroConMasPares (nroFinal, nro);
+		}
+		return nroFinal;
+	}
+	
+		// PROPOSITO: Dado un numero, te devuelve la cantidad de pares que posee.
+	private Integer cantParesDe (Integer n) {
+	       
+			Integer cantDePares = 0;
+	        Integer variable = n; 
+	        
+	        while (variable > 0) {
+	            if ((variable % 2) == 0) {
+	                cantDePares++;
+	            }
+	            variable = variable / 10;
+	            
+	        }
+	        
+	        return cantDePares;
+	    }
+	
+	private Integer numeroConMasPares(int n, int m) {
+		
+		
+		Integer x = cantParesDe (n);
+		Integer y = cantParesDe (m);
+		
+		if (x > y){
+			return n;
+		} else {
+			return m;
+		}	
+	}
+	
+	
+	private boolean esPar(Integer numero) {
+		// PROPOSITO: Indica si un numero es par.
+		return numero % 2 == 0;
+	}
+	
 }

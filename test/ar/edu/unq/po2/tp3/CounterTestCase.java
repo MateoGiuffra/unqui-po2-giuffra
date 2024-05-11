@@ -2,6 +2,11 @@ package ar.edu.unq.po2.tp3;
 
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -30,17 +35,46 @@ counter.addNumber(1);
 counter.addNumber(1);
 counter.addNumber(1);
 counter.addNumber(1);
-counter.addNumber(4);
+counter.addNumber(444);
 }
-/**
-* Verifica la cantidad de pares
-*/
+
 @Test
 public void testNumerosPares() {
-// Getting the even occurrences
+
 int amount = counter.cantPares();
-// I check the amount is the expected one
-assertEquals(amount, 1);
+
+ assertEquals(amount, 1);
+ 
+
 }
+
+@Test
+public void testNumerosImpares() {
+	int amount = counter.cantImpares();
+	assertEquals(amount,9);
+}
+
+@Test
+public void testMultiplos() {
+	int amount = counter.cantMultiplosDe(2);
+	assertEquals(1, amount);
+}
+
+
+@Test
+public void testNumeroConMasPares() {
+
+	List<Integer> lista = new ArrayList<Integer>(); 
+	lista.add(0);
+	lista.add(10);
+	lista.add(22);
+	lista.add(6);
+	lista.add(54432);
+	assertEquals(54432, counter.numConMasPares(lista));
+	
+}
+
+
+
 }
 
