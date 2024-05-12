@@ -14,18 +14,28 @@ public class Producto {
 	double precio;
 	String nombre;
 	boolean esPrecioCuidado;
+	double porcentaje;
 	
-	public Producto(String name, double price, boolean carefulPrice) {
+	public Producto(String name, double price, boolean carefulPrice, double porcentaje) {
 		super();
 		this.precio = price;
 		this.nombre = name; 
 		this.esPrecioCuidado = carefulPrice;
+		this.porcentaje = porcentaje;
 	}
 	
 	public double precio() {
-		return precio;
+		if (this.esPrecioCuidado()){
+			return precioConDescuento();
+		}
+			return precio;
 	}
 
+
+	private double precioConDescuento() {
+		// TODO Auto-generated method stub
+		return  this.precio - this.precio * this.porcentaje / 100;
+	}
 
 	public boolean esPrecioCuidado() {
 		// TODO Auto-generated method stub
@@ -33,3 +43,5 @@ public class Producto {
 	}
 
 }
+
+

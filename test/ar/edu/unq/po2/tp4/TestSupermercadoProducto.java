@@ -17,8 +17,8 @@ class TestSupermercadoProducto {
 	
 	@BeforeEach
 	public void SetUp() {
-		productoPrecioCuidado = new Producto("Leche",1200,true);
-		productoNoPrecioCuidado = new Producto("Cindor",2000,false);
+		productoPrecioCuidado = new Producto("Leche",1200,true,10);
+		productoNoPrecioCuidado = new Producto("Cindor",2000,false,20);
 		supermercado = new Supermercado("Coto", "Av.Dardo Rocha y Cerrito", productos);
 		productos = new ArrayList<Producto>();
 		supermercado.agregarProducto(productoPrecioCuidado);
@@ -27,11 +27,11 @@ class TestSupermercadoProducto {
 	}
 	@Test
 	void testPrecioConDescuento() {
-		assertEquals(1080,supermercado.precioFinal(productoPrecioCuidado));
+		assertEquals(1080,productoPrecioCuidado.precio());
 	}
 	@Test
 	void testPrecioSinDescuento() {
-		assertEquals(2000,supermercado.precioFinal(productoNoPrecioCuidado));
+		assertEquals(2000,productoNoPrecioCuidado.precio());
 	}
 	@Test
 	void testSumaTotalDePrecios() {

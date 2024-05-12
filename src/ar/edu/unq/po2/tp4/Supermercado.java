@@ -28,23 +28,21 @@ public class Supermercado {
 		return productos.size();
 	}
 	double sumaDePrecios(){
-		return productos.stream().mapToDouble(producto -> this.precioFinal(producto)).sum();
-	}
-	
-	double precioFinal(Producto producto) {
-		// Devuelve el precio final de un producto dependiendo de si es precioCuidado o no. 
-		 if (producto.esPrecioCuidado()) {
-			 return producto.precio() * 0.9;
-		} else {
-			 return producto.precio();
-		}
-	}
-	
-	double porcentajeDeDescuento(double percent) {
-		return 0.10 - percent/100;
+		return productos.stream().mapToDouble(producto -> producto.precio()).sum();
 	}
 	
 	void agregarProducto(Producto p) {
 		this.productos.add(p);
 	}
+//	double precioFinal(Producto producto) {
+//		// Devuelve el precio final de un producto dependiendo de si es precioCuidado o no. 
+//		 if (producto.esPrecioCuidado()) {
+//			 return producto.precio() * 0.9;
+//		} else {
+//			 return producto.precio();
+//		}
+//	} antes estaba bien, ahora es responsabilidad del producto decir el precio final ya que el conoce su porcentaje. 
+	
+
+
 }
