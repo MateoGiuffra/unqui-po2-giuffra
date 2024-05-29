@@ -34,6 +34,26 @@ class TestMercado {
 		caja = new Caja(0,coto);
 	}
 	
+	
+	@Test
+	void testLaCantidadDelStockEsTres() {
+		assertEquals(3,coto.cantidadDeStock());
+	}
+	
+	
+	@Test
+	void testPrecioDeLaCarneEs5400() {
+		caja.registrarProducto(carne);
+		assertEquals(5400,caja.getMontoRecaudado());
+	}
+	
+	@Test
+	void testPrecioDeLaLecheEsElMismo() {
+		caja.registrarProducto(leche);
+		assertEquals(leche.getPrecio(),caja.getMontoRecaudado());
+	}
+	
+	
 	@Test
 	void testRegistroDeTodosLosProductos() {
 		
@@ -44,5 +64,7 @@ class TestMercado {
 		assertEquals(0,coto.cantidadDeStock());
 		assertEquals(5400 + 1080 + 1000, caja.getMontoRecaudado());
 	}
+
+	
 
 }
