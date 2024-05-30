@@ -29,12 +29,12 @@ public abstract class SolicitudCrediticia {
 	protected double montoPorMesPrestamo() {
 		return montoSolicitado / plazoEnMeses;
 	}
-	
+
 	public int getPlazoEnMeses() {
 		return this.plazoEnMeses;
 	}
 	
-	protected abstract boolean puedeSolicitarCredito();
+	public abstract boolean puedeSolicitarCredito();
 	
 }
 

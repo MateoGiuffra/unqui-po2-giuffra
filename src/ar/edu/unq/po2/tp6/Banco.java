@@ -17,9 +17,19 @@ public class Banco {
 	}
 
 	public void solicitarCredito(double cantidad, SolicitudCrediticia solicitud) {
-		solicitudes.add(solicitud);
+		this.agregarSolicitud(solicitud);
 		solicitud.prestamoParaCliente();
 	}
 
+	public void agregarSolicitud(SolicitudCrediticia solicitud) {
+		solicitudes.add(solicitud);
+	}
 	
+	public double montoTotalADesembolsar() {
+		return this.solicitudes.stream().mapToDouble(s -> this.montoTotalDePrestamo(s)).sum(); 
+	}
+
+    private double montoTotalDePrestamo(SolicitudCrediticia s) {
+    	return s.puedeSolicitarCredito() ? s.getMontoSolicitado() : 0;
+    }
 }
