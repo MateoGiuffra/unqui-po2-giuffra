@@ -1,6 +1,9 @@
 package ar.edu.unq.po2.tp7;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 //c-Implemente un método para resolver cada una de las siguientes consultas utilizando
 //Streams
 //● Todas las actividades de FUTBOL. Devuelve List<ActividadSemanal>
@@ -40,6 +43,14 @@ public class Municipio {
 		return this.actividades.stream().filter(a -> a.getDeporte() == deporte). // filtro los de el deporte dado. 
 				min((ActividadSemanal a1, ActividadSemanal a2)-> Double.compare(a1.costoDia(), a2.costoDia())).get(); // devuelvo el de menor costo.
 	}
-	
+	public  Map<Deporte, ActividadSemanal> deporteConActMenosCostosa(){
+		return this.actividades.stream().collect(Collectors.toMap(ActividadSemanal :: getDeporte, a -> this.actConMenorCosto(a.getDeporte())));
 
+	}
+	public  Map<Deporte, ActividadSemanal> deporteConActMenosCostosaa(){
+		 Map<Deporte, ActividadSemanal> map = new HashMap<>();
+		this.actividades.forEach(actividad-> map.put(actividad.getDeporte(), this.actConMenorCosto(actividad.getDeporte())));
+		return map;
+	}
+	
 }

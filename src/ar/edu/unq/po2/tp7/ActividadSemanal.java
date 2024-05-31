@@ -11,7 +11,7 @@ public class ActividadSemanal {
 	Deporte deporte;
 	
 	
-	public ActividadSemanal(diaSemanal dia, LocalTime horaDeInicio, int duracion, Deporte deporte) {
+	public ActividadSemanal(diaSemanal dia, LocalTime horaDeInicio, double duracion, Deporte deporte) {
 		super();
 		this.dia = dia;
 		this.horaInicio = horaDeInicio;
@@ -49,5 +49,9 @@ public class ActividadSemanal {
 		this.deporte = deporte;
 	}
 	
+	public String imprimir() {
+		return "Deporte: " + deporte.toString() + ". Dia: " + dia.toString() + " A LAS: " + horaInicio.toString() +  " Duracion: " +  this.duracion + " hora(s)."; 
+	}
 	
+
 }
