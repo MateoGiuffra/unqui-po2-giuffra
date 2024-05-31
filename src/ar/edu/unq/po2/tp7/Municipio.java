@@ -13,7 +13,7 @@ import java.util.List;
 //cual devuelve. Devuelve una ActividadSemanal
 
 
-//Se sugiere investigar la función min de streams y el uso del método
+//Se sugiere investigar la función min de streams y el uso del m étodo
 //Comparator.comparing().
 
 //● Para cada deporte (FUTBOL, TENNIS, etc.), la actividadSemanal más económica.
