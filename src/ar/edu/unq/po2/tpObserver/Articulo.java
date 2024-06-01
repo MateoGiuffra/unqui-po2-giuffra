@@ -23,6 +23,7 @@ public class Articulo {
 	private String tipoArticulo;
 	private String lugarPublicacion;
 	private List<String> palabrasClaves;
+	
 	public String getTitulo() {
 		return titulo;
 	}

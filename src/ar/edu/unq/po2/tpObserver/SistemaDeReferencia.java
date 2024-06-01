@@ -10,6 +10,7 @@ package ar.edu.unq.po2.tpObserver;
 //Las suscripciones pueden combinar cualquiera de los campos que se incluyen en la carga.
 
 import java.util.List;
+import java.util.stream.Stream;
 
 public class SistemaDeReferencia {
 	
@@ -17,13 +18,9 @@ public class SistemaDeReferencia {
 	private List<SuscriptorPagina> suscriptores; 
 	
 	
-	
 	public void notify(Articulo articulo) {
-		for (SuscriptorPagina suscriptor : this.suscriptores) {
-			if (suscriptor.estaInteresadoEn(articulo.getTipoArticulo())) {
-				suscriptor.update();
-			}
-		}
+		Stream<SuscriptorPagina> interesados = this.suscriptores.stream().filter(s -> s.estaInteresadoEn(articulo.getTipoArticulo()));
+		interesados.forEach(s -> s.update());
 	}
 	
 	public void agregarSuscriptor(SuscriptorPagina suscriptorNuevo) {
@@ -36,6 +33,7 @@ public class SistemaDeReferencia {
 	
 	public void agregarArticulo(Articulo articulo) {
 		this.articulos.add(articulo);
+		this.notify(articulo);
 	}
 	
 }
