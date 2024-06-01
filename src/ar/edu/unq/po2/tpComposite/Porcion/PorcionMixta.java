@@ -1,5 +1,4 @@
-package ar.edu.unq.po2.tpComposite;
-
+package ar.edu.unq.po2.tpComposite.Porcion;
 import java.util.List;
 
 public class PorcionMixta implements Porcion {
