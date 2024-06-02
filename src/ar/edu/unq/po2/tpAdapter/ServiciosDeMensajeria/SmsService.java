@@ -24,7 +24,7 @@ package ar.edu.unq.po2.tpAdapter.ServiciosDeMensajeria;
 //servicio de correo electrónico.
 
 //Finalmente, se debe crear una clase de prueba que tenga un método principal. Este método debe crear instancias del servicio de SMS, del servicio de correo 
-//electrónico y del adaptador, y debe demostrar que ambos tipos de mensajes pueden ser enviados a través de la interfaz común.
+//electrónico y del adaptador,  y debe demostrar que ambos tipos de mensajes pueden ser enviados a través de la interfaz común.
 
 public class SmsService {
 
